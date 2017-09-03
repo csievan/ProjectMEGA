@@ -5,4 +5,5 @@
     <color name="TitleDeep">#263b59</color>
     <color name="Titlelight">#395c8b</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="deepGrey">#8e8e8e</color>
 </resources>

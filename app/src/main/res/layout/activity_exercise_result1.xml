@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,16 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="363dp"
-        android:layout_height="119dp"
-        android:src="@drawable/logo"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/logo" />
 
     <TextView
-        android:id="@+id/button3"
+        android:id="@+id/CurrentPlan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CURRENT PLAN"
@@ -26,28 +23,63 @@
         android:textSize="10pt"
         android:textColor="#9c9c9c"
         android:background="@android:color/transparent"
-        android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="404dp"
-        android:layout_marginLeft="112dp"
+        android:layout_marginLeft="123dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/progressTrack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ExProgress"
+        android:layout_marginTop="0dp"
+        android:text="0%"
+        android:textColor="bla"
+        android:layout_below="@id/CurrentPlan"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ProgressBar
         android:id="@+id/ExProgress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="276dp"
         android:layout_height="12dp"
-        android:layout_marginStart="8dp"
         android:max="100"
+        android:layout_below="@id/progressTrack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
         android:indeterminate="false"
         android:indeterminateTintMode="add"
-        android:indeterminateTint="#395c8b"
-        tools:layout_editor_absoluteY="166dp"
-        tools:layout_editor_absoluteX="42dp" />
+        android:indeterminateTint="#395c8b"/>
+
+    <TextView
+        android:id="@+id/ProgressStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ExProgress"
+        android:layout_alignLeft="@id/ExProgress"
+        android:layout_marginTop="0dp"
+        android:text="0%"
+        android:textColor="#9c9c9c"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ProgressEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/ExProgress"
+        android:layout_marginTop="0dp"
+        android:text="100%"
+        android:layout_below="@id/ExProgress"
+        android:textColor="#9c9c9c"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ExNo1"
@@ -56,22 +88,22 @@
         android:text="Exercise #1"
         android:textColor="#263b59"
         android:textStyle="bold"
-        android:textSize="40dp"
-        android:layout_marginTop="7dp"
+        android:textSize="30dp"
+        android:layout_below="@id/ExProgress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/ExProgress"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="101dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="52dp"
-        android:layout_height="60dp"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/menu_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="154dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/RepeCluster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ExNo1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/ExNo1">
 
     <TextView
         android:id="@+id/repeCount"
@@ -81,10 +113,8 @@
         android:text="0"
         android:textSize="45dp"
         android:textColor="#395c8b"
-        android:layout_marginLeft="112dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="225dp" />
+        android:layout_alignBottom="@+id/repeTotal"
+        android:layout_toEndOf="@+id/ProgressEnd"/>
 
 
     <TextView
@@ -93,9 +123,7 @@
         android:layout_height="wrap_content"
         android:text="of"
         android:textSize="20dp"
-        app:layout_constraintLeft_toRightOf="@+id/repeCount"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="32dp"
         app:layout_constraintTop_toBottomOf="@+id/ExNo1" />
 
     <TextView
@@ -106,68 +134,39 @@
         android:text="20"
         android:textSize="45dp"
         android:textColor="#395c8b"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="225dp"
-        app:layout_constraintLeft_toRightOf="@+id/OF"
-        android:layout_marginLeft="35dp" />
+        android:layout_marginLeft="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/MenuButton" />
+    </LinearLayout>
+
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/repetition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#7d7d7d"
-        android:textSize="16dp"
+        android:layout_below="@+id/RepeCluster"
+        android:layout_centerHorizontal="true"
         android:text="repetitions with an accuracy of"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/OF"
-        android:layout_marginLeft="71dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        android:textColor="#7d7d7d"
+        android:textSize="16dp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="191dp"
-        android:layout_height="146dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:layout_marginLeft="85dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/repetition"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
-    <TextView
-        android:id="@+id/progressTrack"
+    <LinearLayout
+        android:id="@+id/RadioCluster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="151dp"
-        android:text="0%"
-        android:textColor="bla"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/ProgressStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="178dp"
-        android:text="0%"
-        android:textColor="#9c9c9c"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/ProgressEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="42dp"
-        android:layout_marginTop="178dp"
-        android:text="100%"
-        android:textColor="#9c9c9c"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/progressBar"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
 
     <RadioButton
         android:id="@+id/radioEx1"
@@ -175,37 +174,33 @@
         android:layout_height="wrap_content"
         android:buttonTintMode="src_atop"
         android:buttonTint="@color/TitleDeep"
-        android:layout_marginLeft="39dp"
+        android:layout_marginLeft="34dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <RadioButton
         android:id="@+id/radioEx2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp"
         app:layout_constraintLeft_toRightOf="@+id/radioEx1"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="20dp" />
 
     <RadioButton
         android:id="@+id/radioEx3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp"
         app:layout_constraintLeft_toRightOf="@+id/radioEx2"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="20dp" />
 
     <RadioButton
         android:id="@+id/radioEx4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp"
         app:layout_constraintLeft_toRightOf="@+id/radioEx3"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="20dp" />
 
 
     <RadioButton
@@ -213,26 +208,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp"
         app:layout_constraintLeft_toRightOf="@+id/radioEx4"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="20dp" />
 
     <RadioButton
         android:id="@+id/radioEx6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp"
         app:layout_constraintLeft_toRightOf="@+id/radioEx5"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="20dp" />
 
     <RadioButton
         android:id="@+id/radioEx7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="96dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/radioEx6"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="20dp"
+        app:layout_constraintHorizontal_bias="0.0" />
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/MenuButton"
+        android:layout_width="52dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/menu_logo" />
+
+</RelativeLayout>
