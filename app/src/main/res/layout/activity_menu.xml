@@ -74,11 +74,11 @@
         android:id="@+id/leg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exercise"
+        android:text="EXERCISES"
         android:textSize="20dp"
         android:textColor="@color/deepGrey"
         android:layout_alignBaseline="@id/Exercise"
-        android:layout_alignLeft="@id/Exercise"/>
+        android:layout_alignRight="@id/Exercise"/>
 
     <Button
         android:id="@+id/Result"

@@ -64,8 +64,8 @@
         android:background="@android:color/transparent"
         android:layout_gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="152dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginLeft="161dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <RadioButton

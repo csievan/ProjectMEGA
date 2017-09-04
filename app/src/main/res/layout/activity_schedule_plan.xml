@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context="com.example.weitan.projectmega.activity.schedule_plan">
 
     <ImageView
@@ -13,8 +14,6 @@
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -22,12 +21,9 @@
         android:layout_width="wrap_content"
         android:layout_height="27dp"
         android:text="Exercises per week"
+        android:layout_marginLeft="50dp"
         android:textColor="#9c9c9c"
-        android:textSize="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="141dp"
-        android:layout_marginLeft="43dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/ExDuration"
@@ -39,7 +35,8 @@
         android:layout_marginTop="21dp"
         app:layout_constraintTop_toBottomOf="@+id/ExWeek"
         android:layout_marginLeft="43dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="43dp" />
 
     <TextView
         android:id="@+id/ExWeekend"
@@ -51,7 +48,8 @@
         android:layout_marginTop="22dp"
         android:layout_marginLeft="43dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ExDuration" />
+        app:layout_constraintTop_toBottomOf="@+id/ExDuration"
+        android:layout_marginStart="43dp" />
 
     <RadioButton
         android:id="@+id/radioButton1"
@@ -60,12 +58,12 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="235dp"
         android:layout_marginLeft="312dp"
-        android:background=""
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="312dp" />
 
     <Button
         android:id="@+id/NEXT"
-        android:layout_width="wrap_content"
+        android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
@@ -76,6 +74,7 @@
         android:textSize="10pt"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="152dp" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

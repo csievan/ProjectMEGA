@@ -16,14 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.Menu" />
         <activity android:name=".activity.Profile" />
         <activity android:name=".activity.reminder_set" />
         <activity android:name=".activity.schedule_plan" />
         <activity android:name=".activity.sign_up2" />
         <activity android:name=".activity.video_demo" />
-        <activity android:name=".activity.exercise_result1"></activity>
+        <activity android:name=".activity.exercise_result1" />
+        <activity
+            android:name=".activity.video_demo2"
+            android:label="@string/title_activity_video_demo2"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
