@@ -6,4 +6,6 @@
     <color name="Titlelight">#395c8b</color>
     <color name="colorAccent">#FF4081</color>
     <color name="deepGrey">#8e8e8e</color>
+    <color name="mega_blue">#64253b58</color>
+    <color name="mega_blue_button">#253b58</color>
 </resources>
