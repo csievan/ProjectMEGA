@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Login">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.Login" />
         <activity android:name=".activity.Menu" />
         <activity android:name=".activity.Profile" />
         <activity android:name=".activity.reminder_set" />
@@ -27,7 +27,8 @@
         <activity
             android:name=".activity.video_demo2"
             android:label="@string/title_activity_video_demo2"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activity.AccountActivity"></activity>
     </application>
 
 </manifest>
