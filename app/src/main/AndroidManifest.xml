@@ -28,7 +28,8 @@
             android:name=".activity.video_demo2"
             android:label="@string/title_activity_video_demo2"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.AccountActivity"></activity>
+        <activity android:name=".activity.AccountActivity" />
+        <activity android:name=".activity.BaseActivity"></activity>
     </application>
 
 </manifest>
