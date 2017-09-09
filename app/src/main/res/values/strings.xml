@@ -4,13 +4,7 @@
     <string name="large_text"></string>
 
     // Customs
-    <string name="action_settings">Settings</string>
-    <string name="form_email">Email</string>
-    <string name="form_password">Password</string>
-    <string name="button_login">Login</string>
-    <string name="button_logout">Log Out</string>
-    <string name="button_disconnect">Disconnect</string>
-
+    <string name="save">Save</string>
 
     // Google Sign In
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
