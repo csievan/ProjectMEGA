@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.weitan.projectmega.R;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Profile extends AppCompatActivity {
@@ -32,13 +33,15 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Calendar cal = Calendar.getInstance();
+
+
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         Profile.this,
-                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        android.R.style.Theme_Holo_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -47,12 +50,17 @@ public class Profile extends AppCompatActivity {
         });
 
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                // Show name of month instead of number
+                SimpleDateFormat month_date = new SimpleDateFormat("MMM");
+                String month_name = month_date.format(month);
+
                 month = month + 1;
                 Log.d(TAG, "onDateSet: mm/dd/yyyy: " + month + "/" + day + "/" + year);
 
-                String date = day + "-" + month + "-" + year;
+                String date = day + "/" + month_name + "/" + year;
                 mDisplayDate.setText(date);
             }
         };
