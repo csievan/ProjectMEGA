@@ -101,7 +101,8 @@
             <NumberPicker
                 android:id="@+id/np_height"
                 android:layout_width="50dp"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:descendantFocusability="blocksDescendants" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -114,7 +115,8 @@
             <NumberPicker
                 android:id="@+id/np_weight"
                 android:layout_width="50dp"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:descendantFocusability="blocksDescendants" />
 
             <TextView
                 android:id="@+id/textView"
