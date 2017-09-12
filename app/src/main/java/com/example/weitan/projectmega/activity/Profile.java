@@ -7,11 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.weitan.projectmega.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -19,18 +25,22 @@ public class Profile extends AppCompatActivity {
 
     private static final String TAG = "Profile";
 
-    // Date Picker variables
+    // Declare variables
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-
-    // Number Picker variables
     NumberPicker npHeight = null;
     NumberPicker npWeight = null;
+    RadioGroup genderRadio = null;
+    Button buttonAdd;
+    DatabaseReference databaseUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        databaseUsers = FirebaseDatabase.getInstance().getReference("users");
+        buttonAdd = (Button) findViewById(R.id.save_button);
 
         // Number Pickers
         npHeight = (NumberPicker) findViewById(R.id.np_height);
@@ -46,13 +56,12 @@ public class Profile extends AppCompatActivity {
         npWeight.setWrapSelectorWheel(false);
 
         mDisplayDate = (TextView) findViewById(R.id.tv_birthday);
+        genderRadio = (RadioGroup) findViewById(R.id.gender);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar cal = Calendar.getInstance();
-
-
 
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
@@ -68,6 +77,15 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        // Save button listener
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addUser();
+            }
+        });
+
+        // Date set listener
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
 
             @Override
@@ -82,7 +100,21 @@ public class Profile extends AppCompatActivity {
                 mDisplayDate.setText(date);
             }
         };
+    }
 
+    private void addUser() {
+        int gender = genderRadio.getCheckedRadioButtonId();
+        String birth = mDisplayDate.getText().toString().trim();
+        int height = npHeight.getMeasuredHeight();
+        int weight = npWeight.getMeasuredHeight();
+
+        String id = databaseUsers.push().getKey();
+
+        Users users = new Users(id, gender, birth, height, weight);
+
+        databaseUsers.child(id).setValue(users);
+
+        Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
     }
 
 }
