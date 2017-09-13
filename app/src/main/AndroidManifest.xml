@@ -9,23 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Profile"
+        <activity android:name=".activity.GoogleSignInActivity">
+            /*
             android:configChanges="keyboardHidden|orientation"
             android:windowSoftInputMode="stateHidden">
+            */
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
-        <activity
-            android:name=".activity.GoogleSignInActivity"
-            android:label="@string/label_google_sign_in" />
-            -->
-        <activity android:name=".activity.GoogleSignInActivity"/>
+        <activity android:name=".activity.Profile"/>
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.Menu" />
+        <activity android:name=".activity.Dashboard" />
         <activity android:name=".activity.reminder_set" />
         <activity android:name=".activity.schedule_plan" />
         <activity android:name=".activity.sign_up2" />

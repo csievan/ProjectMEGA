@@ -54,7 +54,7 @@ public class GoogleSignInActivity extends BaseActivity implements
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
-    // [END declare_auth]
+    FirebaseAuth.AuthStateListener mAuthListner;
 
     private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
@@ -82,6 +82,15 @@ public class GoogleSignInActivity extends BaseActivity implements
                 .build();
         // [END config_signin]
 
+        mAuthListner = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(GoogleSignInActivity.this, Dashboard.class));
+                }
+            }
+        };
+
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
@@ -97,8 +106,12 @@ public class GoogleSignInActivity extends BaseActivity implements
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
+        mAuth.addAuthStateListener(mAuthListner);
+
+        /*
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
+        */
     }
     // [END on_start_check_user]
 

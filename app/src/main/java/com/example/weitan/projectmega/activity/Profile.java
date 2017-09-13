@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.NumberPicker;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,9 +28,10 @@ public class Profile extends AppCompatActivity {
     // Declare variables
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-    NumberPicker npHeight = null;
-    NumberPicker npWeight = null;
-    RadioGroup genderRadio = null;
+    private String date;
+    NumberPicker npHeight, npWeight;
+    RadioGroup rg;
+    RadioButton rb;
     Button buttonAdd;
     DatabaseReference databaseUsers;
 
@@ -40,7 +41,8 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
-        buttonAdd = (Button) findViewById(R.id.save_button);
+
+        rg = (RadioGroup) findViewById(R.id.gender);
 
         // Number Pickers
         npHeight = (NumberPicker) findViewById(R.id.np_height);
@@ -56,11 +58,13 @@ public class Profile extends AppCompatActivity {
         npWeight.setWrapSelectorWheel(false);
 
         mDisplayDate = (TextView) findViewById(R.id.tv_birthday);
-        genderRadio = (RadioGroup) findViewById(R.id.gender);
+
+        buttonAdd = (Button) findViewById(R.id.save_button);
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Calendar cal = Calendar.getInstance();
 
                 int year = cal.get(Calendar.YEAR);
@@ -94,26 +98,43 @@ public class Profile extends AppCompatActivity {
                 // Months range from 0-11
                 month = month + 1;
 
-                Log.d(TAG, "onDateSet: mm/dd/yyyy: " + day + "/" + month + "/" + year);
-
-                String date = day + "/" + month + "/" + year;
+                date = day + "/" + month + "/" + year;
                 mDisplayDate.setText(date);
             }
         };
     }
 
+    public void rbClick(View view) {
+
+        int radioButtonId = rg.getCheckedRadioButtonId();
+
+        rb = (RadioButton) findViewById(radioButtonId);
+    }
+
+    // Write to DB
     private void addUser() {
-        int gender = genderRadio.getCheckedRadioButtonId();
-        String birth = mDisplayDate.getText().toString().trim();
-        int height = npHeight.getMeasuredHeight();
-        int weight = npWeight.getMeasuredHeight();
+
+        // Gender
+        String rbGender = rb.getText().toString();
+        Log.d(TAG, "GENDER: " + rbGender);
+
+        // Birth
+        String birth = date.toString();
+        Log.d(TAG, "BIRTH: " + birth);
+
+        // Height and Weight
+        int height = npHeight.getValue();
+        int weight = npWeight.getValue();
+        Log.d(TAG, "HEIGHT: " + height);
+        Log.d(TAG, "WEIGHT: " + weight);
 
         String id = databaseUsers.push().getKey();
 
-        Users users = new Users(id, gender, birth, height, weight);
+        Users users = new Users(id, rbGender, birth, height, weight);
 
         databaseUsers.child(id).setValue(users);
 
+        // Notify about Update
         Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
     }
 

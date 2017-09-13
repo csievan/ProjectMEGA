@@ -7,7 +7,7 @@ package com.example.weitan.projectmega.activity;
 public class Users {
 
     String userId;
-    int userGender;
+    String userGender;
     String userBirth;
     int userHeight;
     int userWeight;
@@ -16,7 +16,7 @@ public class Users {
 
     }
 
-    public Users(String userId, int userGender, String userBirth, int userHeight, int userWeight) {
+    public Users(String userId, String userGender, String userBirth, int userHeight, int userWeight) {
         this.userId = userId;
         this.userGender = userGender;
         this.userBirth = userBirth;
@@ -28,7 +28,7 @@ public class Users {
         return userId;
     }
 
-    public int getUserGender() {
+    public String getUserGender() {
         return userGender;
     }
 
