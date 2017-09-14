@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.weitan.projectmega.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard extends AppCompatActivity {
 
+    ImageButton results, profile, plan, exercises;
     Button logoutButton;
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
@@ -28,8 +30,50 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        results = (ImageButton) findViewById(R.id.icon_result);
+        profile = (ImageButton) findViewById(R.id.icon_profile);
+        plan = (ImageButton) findViewById(R.id.icon_plan);
+        exercises = (ImageButton) findViewById(R.id.icon_exercises);
+        // notifications = (ImageButton) findViewById(R.id.icon_notifications);
         logoutButton = (Button) findViewById(R.id.sign_out_button);
+
         mAuth = FirebaseAuth.getInstance();
+
+        // Set OnClickListeners
+        results.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, Results.class));
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, Profile.class));
+            }
+        });
+
+        plan.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, Plan.class));
+            }
+        });
+
+        exercises.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, Exercises.class));
+            }
+        });
+
+        /*notifications.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Dashboard.this, Notifications.class));
+            }
+        });*/
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

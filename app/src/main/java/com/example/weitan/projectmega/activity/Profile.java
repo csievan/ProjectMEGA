@@ -3,6 +3,7 @@ package com.example.weitan.projectmega.activity;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.wifi.aware.PublishConfig;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -128,10 +129,12 @@ public class Profile extends AppCompatActivity {
         Log.d(TAG, "HEIGHT: " + height);
         Log.d(TAG, "WEIGHT: " + weight);
 
+       /*
+        * CAN WRITE TO DB, BUT RULES IS SET TO PUBLIC
+        * NEED TO BE CHANGED BEFORE LAUNCHING APPLICATION!
+        */
         String id = databaseUsers.push().getKey();
-
         Users users = new Users(id, rbGender, birth, height, weight);
-
         databaseUsers.child(id).setValue(users);
 
         // Notify about Update

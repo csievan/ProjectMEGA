@@ -61,7 +61,7 @@
                 app:srcCompat="@drawable/profile"/>
 
             <ImageButton
-                android:id="@+id/icon_calendar"
+                android:id="@+id/icon_plan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="3"
@@ -73,7 +73,7 @@
                 app:srcCompat="@drawable/plan"/>
 
             <TextView
-                android:id="@+id/iconTxt_stats"
+                android:id="@+id/iconTxt_results"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
@@ -97,7 +97,7 @@
                 android:text="Profile"/>
 
             <TextView
-                android:id="@+id/iconTxt_calendar"
+                android:id="@+id/iconTxt_plan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="3"
@@ -106,7 +106,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_row="2"
                 android:layout_rowWeight="1"
-                android:text="Calendar"/>
+                android:text="Plan"/>
 
             <ImageButton
                 android:id="@+id/icon_exercises"
@@ -133,18 +133,6 @@
                 app:srcCompat="@drawable/alerts"/>
 
             <TextView
-                android:id="@+id/iconTxt_notifications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_columnWeight="1"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:layout_row="4"
-                android:layout_rowWeight="1"
-                android:text="Notifications"/>
-
-            <TextView
                 android:id="@+id/iconTxt_exercises"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -155,6 +143,18 @@
                 android:layout_row="4"
                 android:layout_rowWeight="1"
                 android:text="Exercises"/>
+
+            <TextView
+                android:id="@+id/iconTxt_notifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_row="4"
+                android:layout_rowWeight="1"
+                android:text="Notifications"/>
 
         </GridLayout>
 
