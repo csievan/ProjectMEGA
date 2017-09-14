@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.weitan.projectmega.R;
 
-public class schedule_plan extends AppCompatActivity {
+public class Plan extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_schedule_plan);
+        setContentView(R.layout.activity_plan);
     }
 }

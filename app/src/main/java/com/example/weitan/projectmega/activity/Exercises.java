@@ -9,9 +9,7 @@ import android.widget.VideoView;
 
 import com.example.weitan.projectmega.R;
 
-import java.net.URL;
-
-public class video_demo extends AppCompatActivity {
+public class Exercises extends AppCompatActivity {
 
     VideoView v1;
     VideoView v2;
@@ -25,7 +23,7 @@ public class video_demo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_demo);
+        setContentView(R.layout.activity_exercises);
         v1 = (VideoView) findViewById(R.id.exDemo1);
         v2 = (VideoView) findViewById(R.id.exDemo2);
         v3 = (VideoView) findViewById(R.id.exDemo3);
