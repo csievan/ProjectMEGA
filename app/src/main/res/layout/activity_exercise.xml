@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context="com.example.weitan.projectmega.activity.video_demo">
+    tools:context="com.example.weitan.projectmega.activity.Exercise">
 
 
     <LinearLayout
@@ -36,7 +35,6 @@
         android:layout_height="200dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:onClick="videoplay1"
         />
 
         <TextView
@@ -77,8 +75,8 @@
             android:layout_height="200dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:onClick="videoplay2"
             />
+        <!--android:onClick="videoplay2"-->
 
         <TextView
             android:id="@+id/exIns2"
@@ -118,7 +116,8 @@
             android:layout_height="200dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:onClick="videoplay3" />
+            />
+        <!--android:onClick="videoplay3"-->
 
         <TextView
             android:id="@+id/exIns3"
@@ -240,8 +239,8 @@
             android:layout_height="200dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:onClick="videoplay6"
             />
+        <!--android:onClick="videoplay6"-->
 
         <TextView
             android:id="@+id/exIns6"
@@ -281,8 +280,8 @@
             android:layout_height="200dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:onClick="videoplay7"
             />
+        <!--android:onClick="videoplay7"-->
 
         <TextView
             android:id="@+id/exIns7"

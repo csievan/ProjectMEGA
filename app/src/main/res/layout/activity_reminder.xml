@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.weitan.projectmega.activity.Reminder">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/ExReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:text="Exercise reminder"
+        android:textColor="#9c9c9c"
+        android:textSize="20dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        />
+
+    <TextView
+        android:id="@+id/ExWeekReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly reminder"
+        android:textSize="20dp"
+        android:textColor="#9c9c9c"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ExReminder"
+        android:layout_marginLeft="50dp" />
+
+    <TextView
+        android:id="@+id/ExMonthReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:text="Monthly reminder"
+        android:textColor="#9c9c9c"
+        android:textSize="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/ExWeekReminder"
+        android:layout_marginLeft="50dp"
+        />
+
+    <Button
+        android:id="@+id/CREATE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATE"
+        android:textStyle="bold"
+        android:textSize="10pt"
+        android:textColor="#263b59"
+        android:background="@android:color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <RadioButton
+        android:id="@+id/buttonWeekly"
+        android:layout_width="32dp"
+        android:layout_height="27dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/ExReminder"
+        android:layout_marginTop="20dp"/>
+
+    <RadioButton
+        android:id="@+id/buttonMonthly"
+        android:layout_width="32dp"
+        android:layout_height="27dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/buttonWeekly"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

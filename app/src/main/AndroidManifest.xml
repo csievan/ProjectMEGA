@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activity.GoogleSignInActivity">
             /*
             android:configChanges="keyboardHidden|orientation"
@@ -19,19 +20,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Profile"/>
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.Dashboard" />
-        <activity android:name=".activity.reminder_set" />
-        <activity android:name=".activity.schedule_plan" />
-        <activity android:name=".activity.sign_up2" />
-        <activity android:name=".activity.video_demo" />
-        <activity android:name=".activity.exercise_result1" />
-        <activity android:name=".activity.BaseActivity" />
-        <activity
-            android:name=".activity.video_demo2"
-            android:label="@string/title_activity_video_demo2"
-            android:theme="@style/AppTheme" />
+
+        <activity android:name=".activity.Profile"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.Dashboard"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.Reminder"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.Plan"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.SignUp"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.Exercise"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.Result"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".activity.BaseActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

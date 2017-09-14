@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="com.example.weitan.projectmega.activity.Plan">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/ExWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginTop="30dp"
+        android:text="Exercises per week"
+        android:layout_marginLeft="50dp"
+        android:textColor="#9c9c9c"
+        android:textSize="20dp"
+        android:layout_below="@+id/imageView"/>
+
+    <TextView
+        android:id="@+id/ExDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercises duration"
+        android:textSize="20dp"
+        android:textColor="#9c9c9c"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ExWeek"
+        android:layout_marginLeft="50dp" />
+
+    <TextView
+        android:id="@+id/ExWeekend"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:text="Exercises weekends"
+        android:textColor="#9c9c9c"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@id/ExDuration" />
+
+    <NumberPicker
+        android:id="@+id/exWeekInput"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"></NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/durationInput"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/exWeekInput"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"></NumberPicker>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="50dp"
+        android:text="Minutes"
+        android:layout_below="@+id/durationInput"
+        android:layout_alignStart="@+id/durationInput" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="32dp"
+        android:layout_height="27dp"
+        android:layout_below="@+id/durationInput"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"/>
+
+    <Button
+        android:id="@+id/NEXT"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="152dp"
+        android:background="@android:color/transparent"
+        android:text="NEXT"
+        android:textColor="#263b59"
+        android:textSize="10pt"
+        android:textStyle="bold"
+         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,17 +1,18 @@
 package com.example.weitan.projectmega.activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 import com.example.weitan.projectmega.R;
 
-import java.net.URL;
+public class Exercise extends AppCompatActivity {
 
-public class video_demo extends AppCompatActivity {
 
     VideoView v1;
     VideoView v2;
@@ -25,7 +26,8 @@ public class video_demo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_demo);
+        setContentView(R.layout.activity_exercise);
+        //Videos
         v1 = (VideoView) findViewById(R.id.exDemo1);
         v2 = (VideoView) findViewById(R.id.exDemo2);
         v3 = (VideoView) findViewById(R.id.exDemo3);
@@ -36,6 +38,14 @@ public class video_demo extends AppCompatActivity {
 
         mediaC = new MediaController(this);
     }
+
+    //Onclick event plan, go to plan activity
+        /*v1.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(Dashboard.this, Plan.class));
+        }
+    });*/
 
     public void videoplay1(View v){
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v1;
