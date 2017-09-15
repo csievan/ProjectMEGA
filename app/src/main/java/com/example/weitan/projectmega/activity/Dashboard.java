@@ -30,11 +30,12 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        // Buttons
         results = (ImageButton) findViewById(R.id.icon_result);
         profile = (ImageButton) findViewById(R.id.icon_profile);
         plan = (ImageButton) findViewById(R.id.icon_plan);
         exercises = (ImageButton) findViewById(R.id.icon_exercises);
-        // notifications = (ImageButton) findViewById(R.id.icon_notifications);
+        //notifications = (ImageButton) findViewById(R.id.icon_notifications);
         logoutButton = (Button) findViewById(R.id.sign_out_button);
 
         mAuth = FirebaseAuth.getInstance();

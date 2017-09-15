@@ -49,16 +49,21 @@ public class GoogleSignInActivity extends BaseActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
+
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
+
     // [START declare_auth]
     private FirebaseAuth mAuth;
-    FirebaseAuth.AuthStateListener mAuthListner;
+    //FirebaseAuth.AuthStateListener mAuthListner;
+    // [END declare_auth]
+
 
     private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
     private TextView mDetailTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,19 +87,14 @@ public class GoogleSignInActivity extends BaseActivity implements
                 .build();
         // [END config_signin]
 
-        mAuthListner = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(GoogleSignInActivity.this, Dashboard.class));
-                }
-            }
-        };
-
+        // [START configure_signin]
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+        // [END configure_signin]
 
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
@@ -106,12 +106,9 @@ public class GoogleSignInActivity extends BaseActivity implements
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        mAuth.addAuthStateListener(mAuthListner);
-
-        /*
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
-        */
+        //mAuth.addAuthStateListener(mAuthListner);
     }
     // [END on_start_check_user]
 
@@ -153,7 +150,8 @@ public class GoogleSignInActivity extends BaseActivity implements
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            //updateUI(user);
+                            startActivity(new Intent(GoogleSignInActivity.this, Dashboard.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
