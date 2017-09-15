@@ -10,14 +10,22 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.weitan.projectmega.R;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard extends AppCompatActivity {
 
     ImageButton results, profile, plan, exercises;
     Button logoutButton;
-    FirebaseAuth mAuth;
+
+    // [START declare_auth]
+    private FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
+    // [END declare_auth]
+
 
     @Override
     protected void onStart() {
@@ -38,7 +46,9 @@ public class Dashboard extends AppCompatActivity {
         //notifications = (ImageButton) findViewById(R.id.icon_notifications);
         logoutButton = (Button) findViewById(R.id.sign_out_button);
 
+        // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
 
         // Set OnClickListeners
         results.setOnClickListener(new View.OnClickListener(){

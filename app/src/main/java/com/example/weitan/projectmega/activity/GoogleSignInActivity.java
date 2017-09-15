@@ -56,7 +56,6 @@ public class GoogleSignInActivity extends BaseActivity implements
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
-    //FirebaseAuth.AuthStateListener mAuthListner;
     // [END declare_auth]
 
 
@@ -175,20 +174,8 @@ public class GoogleSignInActivity extends BaseActivity implements
     }
     // [END signin]
 
-    private void signOut() {
-        // Firebase sign out
-        mAuth.signOut();
 
-        // Google sign out
-        Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        updateUI(null);
-                    }
-                });
-    }
-
+    // Disconnect google account
     private void revokeAccess() {
         // Firebase sign out
         mAuth.signOut();
@@ -233,8 +220,6 @@ public class GoogleSignInActivity extends BaseActivity implements
         int i = v.getId();
         if (i == R.id.sign_in_button) {
             signIn();
-        } else if (i == R.id.sign_out_button) {
-            signOut();
         } else if (i == R.id.disconnect_button) {
             revokeAccess();
         }

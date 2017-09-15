@@ -3,7 +3,11 @@ package com.example.weitan.projectmega.activity;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.net.wifi.aware.PublishConfig;
+import android.renderscript.Element.DataType;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,10 +21,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.weitan.projectmega.R;
+import com.google.android.gms.internal.kx;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
@@ -29,23 +39,27 @@ public class Profile extends AppCompatActivity {
     // Declare variables
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private NumberPicker npHeight, npWeight;
+    private RadioGroup rg;
+    private RadioButton rb;
+    private Button buttonAdd;
+    private DatabaseReference databaseUsers;
+
+    // [START declare_auth]
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    // [END declare_auth]
+
     private String date;
-    NumberPicker npHeight, npWeight;
-    RadioGroup rg;
-    RadioButton rb;
-    Button buttonAdd;
-    DatabaseReference databaseUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        databaseUsers = FirebaseDatabase.getInstance().getReference("users");
-
+        // Setting up the Views
         rg = (RadioGroup) findViewById(R.id.gender);
 
-        // Number Pickers
         npHeight = (NumberPicker) findViewById(R.id.np_height);
         npHeight.setMaxValue(210);
         npHeight.setMinValue(120);
@@ -59,8 +73,12 @@ public class Profile extends AppCompatActivity {
         npWeight.setWrapSelectorWheel(false);
 
         mDisplayDate = (TextView) findViewById(R.id.tv_birthday);
-
         buttonAdd = (Button) findViewById(R.id.save_button);
+
+        // Getting the Firebase url
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +100,7 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+
         // Save button listener
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,12 +109,10 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        // Date set listener
+        // Getting the user input from the date picker
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-
                 // Months range from 0-11
                 month = month + 1;
 
@@ -106,9 +123,7 @@ public class Profile extends AppCompatActivity {
     }
 
     public void rbClick(View view) {
-
         int radioButtonId = rg.getCheckedRadioButtonId();
-
         rb = (RadioButton) findViewById(radioButtonId);
     }
 
@@ -129,16 +144,16 @@ public class Profile extends AppCompatActivity {
         Log.d(TAG, "HEIGHT: " + height);
         Log.d(TAG, "WEIGHT: " + weight);
 
-       /*
-        * CAN WRITE TO DB, BUT RULES IS SET TO PUBLIC
-        * NEED TO BE CHANGED BEFORE LAUNCHING APPLICATION!
-        */
-        String id = databaseUsers.push().getKey();
-        Users users = new Users(id, rbGender, birth, height, weight);
-        databaseUsers.child(id).setValue(users);
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        String userId = currentUser.getUid();
+        Log.d(TAG, "userEmail: " + userId);
+
+        Users user = new Users(userId, rbGender, birth, height, weight);
+        mDatabase.child("user").child(userId).setValue(user);
 
         // Notify about Update
         Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
     }
-
 }
