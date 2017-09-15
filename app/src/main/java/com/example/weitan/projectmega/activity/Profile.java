@@ -26,8 +26,11 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.List;
@@ -51,6 +54,7 @@ public class Profile extends AppCompatActivity {
     // [END declare_auth]
 
     private String date;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,8 @@ public class Profile extends AppCompatActivity {
         // Getting the Firebase url
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        final String userId = currentUser.getUid();
 
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
@@ -120,6 +126,26 @@ public class Profile extends AppCompatActivity {
                 mDisplayDate.setText(date);
             }
         };
+
+        // Read from the database
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String userBirth = dataSnapshot.child("users").child(userId).child("userBirth").getValue(String.class);
+                String userGender = dataSnapshot.child("users").child(userId).child("userGender").getValue(String.class);
+                int userHeight = dataSnapshot.child("users").child(userId).child("userHeight").getValue(int.class);
+                int userWeight = dataSnapshot.child("users").child(userId).child("userWeight").getValue(int.class);
+                Log.d(TAG, "Value is: " + userBirth + " / " + userGender + " / " + userHeight + " / " + userWeight);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
     }
 
     public void rbClick(View view) {
@@ -146,12 +172,12 @@ public class Profile extends AppCompatActivity {
 
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
         String userId = currentUser.getUid();
+
         Log.d(TAG, "userEmail: " + userId);
 
         Users user = new Users(userId, rbGender, birth, height, weight);
-        mDatabase.child("user").child(userId).setValue(user);
+        mDatabase.child("users").child(userId).setValue(user);
 
         // Notify about Update
         Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
