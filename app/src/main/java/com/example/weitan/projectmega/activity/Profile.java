@@ -67,7 +67,7 @@ public class Profile extends AppCompatActivity {
         npHeight = (NumberPicker) findViewById(R.id.np_height);
         npHeight.setMaxValue(210);
         npHeight.setMinValue(120);
-        npHeight.setValue(165);
+        npHeight.setValue(60);
         npHeight.setWrapSelectorWheel(false);
 
         npWeight = (NumberPicker) findViewById(R.id.np_weight);
