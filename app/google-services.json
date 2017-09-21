@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "383734407300-nrii9fe74nf31kunu84a5neqnod18ars.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weitan.projectmega",
+            "certificate_hash": "249997a10997cca5d7b7c80292048510cebcee1f"
+          }
+        },
+        {
           "client_id": "383734407300-l8u54v8mmhtd616la4m876e4u2i138ho.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

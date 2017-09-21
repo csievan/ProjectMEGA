@@ -3,6 +3,7 @@ package com.example.weitan.projectmega.activity;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -87,7 +88,15 @@ public class Exercises extends AppCompatActivity {
         v1.setMediaController(mediaC);
         mediaC.setAnchorView(v1);
 
-        v1.start();
+        v1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                v1.start();
+                return true;
+            }
+        });
+
+
     }
 
     public void videoplay2(View v){
