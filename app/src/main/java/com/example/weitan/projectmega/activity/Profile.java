@@ -67,7 +67,7 @@ public class Profile extends AppCompatActivity {
         npHeight = (NumberPicker) findViewById(R.id.np_height);
         npHeight.setMaxValue(210);
         npHeight.setMinValue(120);
-        npHeight.setValue(60);
+        npHeight.setValue(165);
         npHeight.setWrapSelectorWheel(false);
 
         npWeight = (NumberPicker) findViewById(R.id.np_weight);
@@ -127,27 +127,6 @@ public class Profile extends AppCompatActivity {
             }
         };
 
-        // Read from the database
-        /*
-        mDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String userBirth = dataSnapshot.child("users").child(userID).child("userBirth").getValue(String.class);
-                String userGender = dataSnapshot.child("users").child(userID).child("userGender").getValue(String.class);
-                int userHeight = dataSnapshot.child("users").child(userID).child("userHeight").getValue(int.class);
-                int userWeight = dataSnapshot.child("users").child(userID).child("userWeight").getValue(int.class);
-                Log.d(TAG, "Value is: " + userBirth + " / " + userGender + " / " + userHeight + " / " + userWeight);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-        */
     }
 
     public void rbClick(View view) {
@@ -182,6 +161,6 @@ public class Profile extends AppCompatActivity {
         mDatabase.child("users").child(userID).setValue(user);
 
         // Notify about Update
-        Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Profile updated", Toast.LENGTH_LONG).show();
     }
 }
