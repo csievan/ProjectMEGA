@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.NumberPicker;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.weitan.projectmega.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +26,7 @@ public class Plan extends AppCompatActivity {
 
     NumberPicker exePerWeek, exeDuration;
     Button nextStep;
-    RadioButton weekend;
+    CheckBox weekend;
     TextView display;
 
 
@@ -40,8 +42,6 @@ public class Plan extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
 
-        display = (TextView) findViewById(R.id.textView5);
-
         databasePlan = FirebaseDatabase.getInstance().getReference("plans");
 
         /*
@@ -51,7 +51,7 @@ public class Plan extends AppCompatActivity {
         */
 
         nextStep = (Button) findViewById(R.id.Next);
-        weekend = (RadioButton) findViewById(R.id.radioExeWeekend);
+        weekend = (CheckBox) findViewById(R.id.checkExeWeekend);
 
 
         //NumberPickers
@@ -99,8 +99,8 @@ public class Plan extends AppCompatActivity {
 
 
 
-        if (weekend.getText() != null) {
-            String week = weekend.getText().toString();
+        if (weekend.isChecked()) {
+            String week = "true";
             Log.d(TAG, "ExerciseWeekend: " + week);
             Plans plan = new Plans(id, userId, weekFrequency, duration, week);
             databasePlan.child(id).setValue(plan);
@@ -110,5 +110,8 @@ public class Plan extends AppCompatActivity {
             Plans plan = new Plans(id, userId, weekFrequency, duration, week);
             databasePlan.child(id).setValue(plan);
         }
+
+    // Notify about Update
+    Toast.makeText(this, "Plan created", Toast.LENGTH_LONG).show();
     }
 }

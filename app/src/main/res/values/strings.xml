@@ -5,6 +5,7 @@
 
     // Customs
     <string name="save">Save</string>
+    <string name="create">Create</string>
 
     // Google Sign In
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
