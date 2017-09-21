@@ -17,11 +17,16 @@
         </activity>
         <activity android:name=".activity.Profile"
                   android:configChanges="keyboardHidden|orientation"
-                  android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".activity.Dashboard" />
-        <activity android:name=".activity.Plan" />
-        <activity android:name=".activity.Exercises" />
-        <activity android:name=".activity.Results" />
+                  android:windowSoftInputMode="stateHidden"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.Dashboard"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.Plan"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.Exercises"
+                  android:screenOrientation="portrait" />
+        <activity android:name=".activity.Results"
+                  android:screenOrientation="portrait" />
         <activity android:name=".activity.BaseActivity" />
 
     </application>
