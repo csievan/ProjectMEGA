@@ -29,6 +29,11 @@
             android:text="@string/google_title_text"
             android:theme="@style/ThemeOverlay.MyTitleText" />
 
+        <TextView
+            android:id="@+id/status"
+            style="@style/ThemeOverlay.MyTextDetail"
+            android:text="Please sign in using your Google account" />
+
 
     </LinearLayout>
 

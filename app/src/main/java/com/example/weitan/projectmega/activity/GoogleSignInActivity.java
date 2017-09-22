@@ -60,12 +60,16 @@ public class GoogleSignInActivity extends BaseActivity implements
 
 
     private GoogleApiClient mGoogleApiClient;
+    private TextView mStatusTextView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google);
+
+        // Views
+        mStatusTextView = (TextView) findViewById(R.id.status);
 
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
@@ -100,6 +104,12 @@ public class GoogleSignInActivity extends BaseActivity implements
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser != null) {
+            mStatusTextView.setText(getString(R.string.google_status_fmt, currentUser.getEmail()));
+        } else {
+            //
+        }
 
     }
     // [END on_start_check_user]
@@ -175,6 +185,7 @@ public class GoogleSignInActivity extends BaseActivity implements
                     }
                 });
     }
+
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
