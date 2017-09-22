@@ -149,13 +149,13 @@ public class ExercisesPart extends AppCompatActivity {
                     ExercisesFour exFour = new ExercisesFour();
                     return exFour;
                 case 4:
-                    ExercisesOne exFIve = new ExercisesOne();
+                    ExercisesFive exFIve = new ExercisesFive();
                     return exFIve;
                 case 5:
-                    ExercisesOne exSix = new ExercisesOne();
+                    ExercisesSix exSix = new ExercisesSix();
                     return exSix;
                 case 6:
-                    ExercisesOne exSeven = new ExercisesOne();
+                    ExercisesSeven exSeven = new ExercisesSeven();
                     return exSeven;
 
                 default:

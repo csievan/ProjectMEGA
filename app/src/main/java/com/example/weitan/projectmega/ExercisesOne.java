@@ -29,7 +29,6 @@ public class ExercisesOne extends Fragment{
         v1 = (VideoView) view.findViewById(R.id.exDemo1);
         String path = "android.resource://" + "com.example.weitan.projectmega" + "/" + R.raw.v1;
         v1.setVideoURI(Uri.parse(path));
-        v1.start();
 
         /*v1.setVideoPath("android.resource://"++"/"+ R.raw.v1);
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v1;

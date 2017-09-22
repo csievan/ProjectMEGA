@@ -27,17 +27,14 @@ public class ExercisesTwo extends Fragment{
 
         v2 = (VideoView) view.findViewById(R.id.exDemo2);
 
-        v2 = (VideoView) view.findViewById(R.id.exDemo2);
         String path = "android.resource://" + "com.example.weitan.projectmega" + "/" + R.raw.v2;
         v2.setVideoURI(Uri.parse(path));
-        v2.start();
 
         v2.setOnTouchListener(new View.OnTouchListener()
         {
             @Override
             public boolean onTouch(View v, MotionEvent motionEvent)
             {
-//                mediaC1.setAnchorView(v1);
                 if(v2.isPlaying())
                 {
                     v2.pause();
