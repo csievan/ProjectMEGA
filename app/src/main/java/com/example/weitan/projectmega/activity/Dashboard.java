@@ -76,16 +76,10 @@ public class Dashboard extends AppCompatActivity {
         exercises.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Dashboard.this, Exercises.class));
-            }
-        });
-
-        notifications.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
                 startActivity(new Intent(Dashboard.this, ExercisesPart.class));
             }
         });
+
 
         /*notifications.setOnClickListener(new View.OnClickListener(){
             @Override
