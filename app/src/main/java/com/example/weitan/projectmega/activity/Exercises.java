@@ -24,7 +24,7 @@ public class Exercises extends AppCompatActivity {
         setContentView(R.layout.activity_exercises);
         //Videos
         v1 = (VideoView) findViewById(R.id.exDemo1);
-        View v11 = findViewById(R.id.exDemo1);
+//        View v11 = findViewById(R.id.exDemo1);
 
         //videos
         v2 = (VideoView) findViewById(R.id.exDemo2);

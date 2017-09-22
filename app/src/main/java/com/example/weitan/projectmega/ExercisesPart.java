@@ -135,26 +135,57 @@ public class ExercisesPart extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position){
+                case 0:
+                    ExercisesOne exOne = new ExercisesOne();
+                    return exOne;
+                case 1:
+                    ExercisesTwo exTwo = new ExercisesTwo();
+                    return exTwo;
+                case 2:
+                    ExercisesThree exThree = new ExercisesThree();
+                    return exThree;
+                case 3:
+                    ExercisesFour exFour = new ExercisesFour();
+                    return exFour;
+                case 4:
+                    ExercisesOne exFIve = new ExercisesOne();
+                    return exFIve;
+                case 5:
+                    ExercisesOne exSix = new ExercisesOne();
+                    return exSix;
+                case 6:
+                    ExercisesOne exSeven = new ExercisesOne();
+                    return exSeven;
+
+                default:
+                    return null;
+            }
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 7 total pages.
+            return 7;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                     return "#1";
                 case 1:
-                    return "SECTION 2";
+                    return "#2";
                 case 2:
-                    return "SECTION 3";
+                    return "#3";
+                case 3:
+                    return "#4";
+                case 4:
+                    return "#5";
+                case 5:
+                    return "#6";
+                case 6:
+                    return "#7";
             }
             return null;
         }
