@@ -35,15 +35,6 @@ public class Exercises extends AppCompatActivity {
         v7 = (VideoView) findViewById(R.id.exDemo7);
 
 
-        mediaC1 = new MediaController(this);
-        mediaC2 = new MediaController(this);
-        mediaC3 = new MediaController(this);
-        mediaC4 = new MediaController(this);
-        mediaC5 = new MediaController(this);
-        mediaC6 = new MediaController(this);
-        mediaC7 = new MediaController(this);
-
-
 
 
         /*v1.setOnTouchListener(new View.OnTouchListener() {
@@ -64,7 +55,7 @@ public class Exercises extends AppCompatActivity {
             }
         });*/
 
-
+        //Exercise #1 video
         v1.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v1);
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v1;
         Uri uri = Uri.parse(path);
@@ -82,23 +73,186 @@ public class Exercises extends AppCompatActivity {
                 if(v1.isPlaying())
                 {
                     v1.pause();
-                    if (!mediaC1.isShowing())
-                    {
-//                        mediaC1.setAnchorView(v1);
-                        mediaC1.hide();
 
-                    }
                     return false;
                 }
                 else if(!v1.isPlaying())
                 {
-
-                    if (mediaC1.isShowing())
-                    {
-                        mediaC1.hide();
-                    }
                     v1.seekTo(v1.getCurrentPosition());
                     v1.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+
+        //Exercise #2 video
+        v2.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v2);
+        String path2 = "android.resource://"+getPackageName()+"/"+ R.raw.v2;
+        Uri uri2 = Uri.parse(path2);
+        v2.setVideoURI(uri2);
+
+        v2.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v2.isPlaying())
+                {
+                    v2.pause();
+
+                    return false;
+                }
+                else if(!v2.isPlaying())
+                {
+                    v2.seekTo(v2.getCurrentPosition());
+                    v2.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+
+
+        //Exercise #3 video
+        v3.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v3);
+        String path3 = "android.resource://"+getPackageName()+"/"+ R.raw.v3;
+        Uri uri3 = Uri.parse(path3);
+        v3.setVideoURI(uri3);
+
+        v3.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v3.isPlaying())
+                {
+                    v3.pause();
+
+                    return false;
+                }
+                else if(!v3.isPlaying())
+                {
+                    v3.seekTo(v3.getCurrentPosition());
+                    v3.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+
+        //Exercise #4 video
+        v4.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v4);
+        String path4 = "android.resource://"+getPackageName()+"/"+ R.raw.v4;
+        Uri uri4 = Uri.parse(path4);
+        v4.setVideoURI(uri4);
+
+        v4.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v4.isPlaying())
+                {
+                    v4.pause();
+
+                    return false;
+                }
+                else if(!v4.isPlaying())
+                {
+                    v4.seekTo(v4.getCurrentPosition());
+                    v4.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+
+        //Exercise #5 video
+        v5.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v5);
+        String path5 = "android.resource://"+getPackageName()+"/"+ R.raw.v5;
+        Uri uri5 = Uri.parse(path5);
+        v5.setVideoURI(uri5);
+
+        v5.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v5.isPlaying())
+                {
+                    v5.pause();
+
+                    return false;
+                }
+                else if(!v5.isPlaying())
+                {
+                    v5.seekTo(v5.getCurrentPosition());
+                    v5.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+
+        //Exercise #6 video
+        v6.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v6);
+        String path6 = "android.resource://"+getPackageName()+"/"+ R.raw.v6;
+        Uri uri6 = Uri.parse(path6);
+        v6.setVideoURI(uri6);
+        v6.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v6.isPlaying())
+                {
+                    v6.pause();
+
+                    return false;
+                }
+                else if(!v6.isPlaying())
+                {
+                    v6.seekTo(v6.getCurrentPosition());
+                    v6.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+
+        //Exercise #7 video
+        v7.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v7);
+        String path7 = "android.resource://"+getPackageName()+"/"+ R.raw.v7;
+        Uri uri7 = Uri.parse(path7);
+        v7.setVideoURI(uri7);
+        v7.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v7.isPlaying())
+                {
+                    v7.pause();
+
+                    return false;
+                }
+                else if(!v7.isPlaying())
+                {
+                    v7.seekTo(v7.getCurrentPosition());
+                    v7.start();
                     return false;
                 }
                 return false;
@@ -165,57 +319,5 @@ public class Exercises extends AppCompatActivity {
 
     }*/
 
-    public void videoplay2(View v){
-        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v2;
-        Uri uri = Uri.parse(path);
-        v2.setVideoURI(uri);
-        v2.setMediaController(mediaC2);
-        mediaC2.setAnchorView(v2);
-        v2.start();
-    }
 
-    public void videoplay3(View v){
-        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v3;
-        Uri uri = Uri.parse(path);
-        v3.setVideoURI(uri);
-        v3.setMediaController(mediaC3);
-        mediaC3.setAnchorView(v3);
-        v3.start();
-    }
-
-    public void videoplay4(View v){
-        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v4;
-        Uri uri = Uri.parse(path);
-        v4.setVideoURI(uri);
-        v4.setMediaController(mediaC4);
-        mediaC4.setAnchorView(v4);
-        v4.start();
-    }
-
-    public void videoplay5(View v){
-        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v5;
-        Uri uri = Uri.parse(path);
-        v5.setVideoURI(uri);
-        v5.setMediaController(mediaC5);
-        mediaC5.setAnchorView(v5);
-        v5.start();
-    }
-
-    public void videoplay6(View v){
-        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v6;
-        Uri uri = Uri.parse(path);
-        v6.setVideoURI(uri);
-        v6.setMediaController(mediaC6);
-        mediaC6.setAnchorView(v6);
-        v6.start();
-    }
-
-    public void videoplay7(View v){
-        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v7;
-        Uri uri = Uri.parse(path);
-        v7.setVideoURI(uri);
-        v7.setMediaController(mediaC7);
-        mediaC7.setAnchorView(v7);
-        v7.start();
-    }
 }

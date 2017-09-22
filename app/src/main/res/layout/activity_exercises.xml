@@ -40,15 +40,6 @@
             android:layout_marginRight="20dp"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay1"
-            />
 
         <TextView
             android:id="@+id/exIns1"
@@ -88,16 +79,6 @@
             android:layout_height="200dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay2"
             />
 
         <TextView
@@ -140,16 +121,6 @@
             android:layout_marginRight="20dp"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay3"
-            />
-
         <TextView
             android:id="@+id/exIns3"
             android:layout_width="match_parent"
@@ -190,15 +161,6 @@
             android:layout_marginRight="20dp"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay4"
-            />
 
         <TextView
             android:id="@+id/exIns4"
@@ -240,15 +202,6 @@
             android:layout_marginRight="20dp"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay5"
-            />
 
         <TextView
             android:id="@+id/exIns5"
@@ -290,15 +243,6 @@
             android:layout_marginRight="20dp"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay6"
-            />
 
         <TextView
             android:id="@+id/exIns6"
@@ -340,15 +284,6 @@
             android:layout_marginRight="20dp"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go!"
-            android:textSize="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="videoplay7"
-            />
 
         <TextView
             android:id="@+id/exIns7"
