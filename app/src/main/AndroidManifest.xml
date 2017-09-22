@@ -12,23 +12,32 @@
         <activity android:name=".activity.GoogleSignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Profile"
-                  android:configChanges="keyboardHidden|orientation"
-                  android:windowSoftInputMode="stateHidden"
-                  android:screenOrientation="portrait" />
-        <activity android:name=".activity.Dashboard"
-                  android:screenOrientation="portrait" />
-        <activity android:name=".activity.Plan"
-                  android:screenOrientation="portrait" />
-        <activity android:name=".activity.Exercises"
-                  android:screenOrientation="portrait" />
-        <activity android:name=".activity.Results"
-                  android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Profile"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.Dashboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Plan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Exercises"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Results"
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.BaseActivity" />
-
+        <activity
+            android:name=".ExercisesPart"
+            android:label="@string/title_activity_exercises_part"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
