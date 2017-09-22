@@ -1,5 +1,6 @@
 package com.example.weitan.projectmega.activity;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,14 +14,9 @@ import com.example.weitan.projectmega.R;
 public class Exercises extends AppCompatActivity {
 
 
-    VideoView v1;
-    VideoView v2;
-    VideoView v3;
-    VideoView v4;
-    VideoView v5;
-    VideoView v6;
-    VideoView v7;
-    MediaController mediaC;
+
+    private VideoView v1, v2, v3, v4, v5, v6, v7;
+    private MediaController mediaC1, mediaC2, mediaC3, mediaC4, mediaC5, mediaC6, mediaC7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +35,78 @@ public class Exercises extends AppCompatActivity {
         v7 = (VideoView) findViewById(R.id.exDemo7);
 
 
-        mediaC = new MediaController(this);
+        mediaC1 = new MediaController(this);
+        mediaC2 = new MediaController(this);
+        mediaC3 = new MediaController(this);
+        mediaC4 = new MediaController(this);
+        mediaC5 = new MediaController(this);
+        mediaC6 = new MediaController(this);
+        mediaC7 = new MediaController(this);
+
+
+
+
+        /*v1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                v1.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v1);
+                String path = "android.resource://"+getPackageName()+"/"+ R.raw.v1;
+                Uri uri = Uri.parse(path);
+                v1.setVideoURI(uri);
+
+                v1.setMediaController(mediaC);
+                mediaC.setAnchorView(v1);
+                switch (motionEvent.getAction()){
+                    case MotionEvent.
+                }
+                v1.start();
+                return true;
+            }
+        });*/
+
+
+        v1.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v1);
+        String path = "android.resource://"+getPackageName()+"/"+ R.raw.v1;
+        Uri uri = Uri.parse(path);
+        v1.setVideoURI(uri);
+
+//        v1.setMediaController(mediaC1);
+
+
+        v1.setOnTouchListener(new View.OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionEvent)
+            {
+//                mediaC1.setAnchorView(v1);
+                if(v1.isPlaying())
+                {
+                    v1.pause();
+                    if (!mediaC1.isShowing())
+                    {
+//                        mediaC1.setAnchorView(v1);
+                        mediaC1.hide();
+
+                    }
+                    return false;
+                }
+                else if(!v1.isPlaying())
+                {
+
+                    if (mediaC1.isShowing())
+                    {
+                        mediaC1.hide();
+                    }
+                    v1.seekTo(v1.getCurrentPosition());
+                    v1.start();
+                    return false;
+                }
+                return false;
+            }
+        });
+    }
+
+
 
 
         //play video exercise #1
@@ -68,7 +135,6 @@ public class Exercises extends AppCompatActivity {
         v1.setMediaController(new MediaController(this));
         v1.requestFocus();
         v1.start();*/
-    }
 
     //Onclick event plan, go to plan activity
         /*v1.setOnClickListener(new View.OnClickListener(){
@@ -79,7 +145,7 @@ public class Exercises extends AppCompatActivity {
     });*/
 
 
-    public void videoplay1(View v){
+    /*public void videoplay1(View v){
         v1.setVideoPath("android.resource://"+getPackageName()+"/"+ R.raw.v1);
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v1;
         Uri uri = Uri.parse(path);
@@ -97,14 +163,14 @@ public class Exercises extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
     public void videoplay2(View v){
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v2;
         Uri uri = Uri.parse(path);
         v2.setVideoURI(uri);
-        v2.setMediaController(mediaC);
-        mediaC.setAnchorView(v2);
+        v2.setMediaController(mediaC2);
+        mediaC2.setAnchorView(v2);
         v2.start();
     }
 
@@ -112,8 +178,8 @@ public class Exercises extends AppCompatActivity {
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v3;
         Uri uri = Uri.parse(path);
         v3.setVideoURI(uri);
-        v3.setMediaController(mediaC);
-        mediaC.setAnchorView(v3);
+        v3.setMediaController(mediaC3);
+        mediaC3.setAnchorView(v3);
         v3.start();
     }
 
@@ -121,8 +187,8 @@ public class Exercises extends AppCompatActivity {
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v4;
         Uri uri = Uri.parse(path);
         v4.setVideoURI(uri);
-        v4.setMediaController(mediaC);
-        mediaC.setAnchorView(v4);
+        v4.setMediaController(mediaC4);
+        mediaC4.setAnchorView(v4);
         v4.start();
     }
 
@@ -130,8 +196,8 @@ public class Exercises extends AppCompatActivity {
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v5;
         Uri uri = Uri.parse(path);
         v5.setVideoURI(uri);
-        v5.setMediaController(mediaC);
-        mediaC.setAnchorView(v5);
+        v5.setMediaController(mediaC5);
+        mediaC5.setAnchorView(v5);
         v5.start();
     }
 
@@ -139,8 +205,8 @@ public class Exercises extends AppCompatActivity {
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v6;
         Uri uri = Uri.parse(path);
         v6.setVideoURI(uri);
-        v6.setMediaController(mediaC);
-        mediaC.setAnchorView(v6);
+        v6.setMediaController(mediaC6);
+        mediaC6.setAnchorView(v6);
         v6.start();
     }
 
@@ -148,8 +214,8 @@ public class Exercises extends AppCompatActivity {
         String path = "android.resource://"+getPackageName()+"/"+ R.raw.v7;
         Uri uri = Uri.parse(path);
         v7.setVideoURI(uri);
-        v7.setMediaController(mediaC);
-        mediaC.setAnchorView(v7);
+        v7.setMediaController(mediaC7);
+        mediaC7.setAnchorView(v7);
         v7.start();
     }
 }
