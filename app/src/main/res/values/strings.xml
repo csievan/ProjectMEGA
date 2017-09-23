@@ -56,4 +56,20 @@
     <string name="title_activity_exercises_part">ExercisesPart</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    //Exercises
+    <string name="ex1_title">Side Leg Kick</string>
+    <string name="ex1_description">Step1: Raise your left leg out to the side.\n \n Step2: Return to the starting position and repeat.\n \n Step3:Continue with the right leg.</string>
+    <string name="ex2_title">Leg Swing (Front)</string>
+    <string name="ex2_description">Step1: Lift your left leg out in front of you \n \n Step2: Return to the starting position and repeat.\n \n Step3:Continue with the right leg.</string>
+    <string name="ex3_title">Knee Marching</string>
+    <string name="ex3_description">Step1:Raise one knee up as high as comfortable. \n \n Step2:Lower, then raise the other knee. \n \n Step3:Repeat.</string>
+    <string name="ex4_title">Knee Extension</string>
+    <string name="ex4_description">Step1: Raise your left foot to straighten your leg \n \n Step2: Return to the starting position and repeat.\n \n Step3:Continue with the right leg.</string>
+    <string name="ex5_title">Calf Raises</string>
+    <string name="ex5_description">Step1:Raise up on your toes as high as you comfortably can. \n \n Step2: Return to the starting position and repeat.</string>
+    <string name="ex6_title">Partial Squats</string>
+    <string name="ex6_description">Step1: Bend your knees as far as comfortable without pain. \n \n Step2:Return to the starting position and repeat.</string>
+    <string name="ex7_title">Standing Knee Flexion</string>
+    <string name="ex7_description">Step1: Bend your left knee backward as high as you can.\n \n  Step2: Return to the starting position and repeat.\n \n Step3:Continue with the right leg.</string>
 </resources>
