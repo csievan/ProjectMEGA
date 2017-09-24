@@ -15,10 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#263b59"
-        android:text="EXERCISE #1"
+        android:text="@string/ex1_title"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:textSize="30dp"/>
+        android:textSize="30dp"
+        />
 
     <VideoView
         android:id="@+id/exDemo1"
@@ -39,6 +40,18 @@
         android:text="INSTRUCTIONS"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/exIns1Detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Titlelight"
+        android:text="@string/ex1_description"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:textSize="20dp"
