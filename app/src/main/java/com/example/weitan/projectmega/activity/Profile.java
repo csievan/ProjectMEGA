@@ -3,11 +3,6 @@ package com.example.weitan.projectmega.activity;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.net.wifi.aware.PublishConfig;
-import android.renderscript.Element.DataType;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,19 +16,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.weitan.projectmega.R;
-import com.google.android.gms.internal.kx;
-import com.google.firebase.FirebaseApp;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
-import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
