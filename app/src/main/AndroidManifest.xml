@@ -53,7 +53,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activity.Notifications">
+        <activity android:name=".activity.Reminder">
         </activity>
     </application>
 

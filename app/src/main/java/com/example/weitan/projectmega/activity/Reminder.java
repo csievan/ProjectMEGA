@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.weitan.projectmega.R;
 
-public class Notifications extends AppCompatActivity {
+public class Reminder extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notifications);
+        setContentView(R.layout.activity_reminder);
     }
 }

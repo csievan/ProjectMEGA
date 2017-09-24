@@ -11,16 +11,11 @@ import android.widget.ImageButton;
 
 import com.example.weitan.projectmega.ExercisesPart;
 import com.example.weitan.projectmega.R;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Dashboard extends AppCompatActivity {
 
-    ImageButton results, profile, plan, exercises, notifications;
+    ImageButton results, profile, plan, exercises, reminder;
     Button logoutButton;
 
     // [START declare_auth]
@@ -45,7 +40,7 @@ public class Dashboard extends AppCompatActivity {
         profile = (ImageButton) findViewById(R.id.icon_profile);
         plan = (ImageButton) findViewById(R.id.icon_plan);
         exercises = (ImageButton) findViewById(R.id.icon_exercises);
-        notifications = (ImageButton) findViewById(R.id.icon_notifications);
+        reminder = (ImageButton) findViewById(R.id.icon_notifications);
         logoutButton = (Button) findViewById(R.id.sign_out_button);
 
         // [START initialize_auth]
@@ -82,14 +77,12 @@ public class Dashboard extends AppCompatActivity {
         });
 
 
-        /*notifications.setOnClickListener(new View.OnClickListener(){
+        reminder.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Dashboard.this, Notifications.class));
+                startActivity(new Intent(Dashboard.this, Reminder.class));
             }
-        });*/
-
-
+        });
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

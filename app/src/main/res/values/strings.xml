@@ -7,6 +7,7 @@
     <string name="save">Save</string>
     <string name="create">Create</string>
     <string name="change_user">Sign in as another Google user</string>
+    <string name="exercise_weekends">Exercise on weekends</string>
 
     // Google Sign In
     <string name="label_google_sign_in">Firebase + Google Sign In</string>
