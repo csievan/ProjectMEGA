@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.weitan.projectmega">
+          package="com.example.weitan.projectmega">
 
     <application
         android:allowBackup="true"
@@ -11,33 +11,33 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.GoogleSignInActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.Profile"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".activity.Dashboard"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.Plan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.Exercises"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.Results"
-            android:screenOrientation="portrait" />
-        <activity android:name=".activity.BaseActivity" />
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.BaseActivity"/>
         <activity
             android:name=".ExercisesPart"
             android:label="@string/title_activity_exercises_part"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"/>
 
         <service
             android:name=".activity.MyFirebaseMessagingService"
@@ -47,14 +47,14 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
-
-        <service
-            android:name=".activity.FirebaseIDService">
+        <service android:name=".activity.FirebaseIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
+        <activity android:name=".activity.Notifications">
+        </activity>
     </application>
 
 </manifest>
