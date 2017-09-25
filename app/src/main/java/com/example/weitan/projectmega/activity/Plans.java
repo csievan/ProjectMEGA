@@ -4,11 +4,11 @@ package com.example.weitan.projectmega.activity;
  * Created by weitan on 17/09/2017.
  */
 public class Plans {
-    String planID;
-    String userID;
-    int weekFrequency;
-    int duration;
-    String weekendChecked;
+    private String planID;
+    private String userID;
+    private int weekFrequency;
+    private int duration;
+    private String weekendChecked;
 
     public Plans(){
 
